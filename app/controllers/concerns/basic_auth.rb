@@ -1,3 +1,4 @@
+# Basic authentication for all controllers
 module BasicAuth
   extend ActiveSupport::Concern
 

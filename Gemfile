@@ -7,6 +7,8 @@ ruby '3.2.0'
 gem 'active_type'
 gem 'bcrypt'
 gem 'bootsnap', require: false
+gem 'devise'
+gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped'
 gem 'importmap-rails'
 gem 'pg', '~> 1.1'
 gem 'pgcli-rails'
@@ -16,6 +18,7 @@ gem 'rails', '~> 7.0.3'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+
 
 group :production do
   gem 'postmark-rails'
