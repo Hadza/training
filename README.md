@@ -10,7 +10,7 @@ This README describes the purpose of this repository and how to set up a develop
 
 This project requires:
 
-* Ruby 3.2.0, preferably managed using [rbenv][]
+* Ruby 3.2.0, preferably managed using [rvm][]
 * PostgreSQL must be installed and accepting connections
 
 On a Mac, you can obtain all of the above packages using [Homebrew][].
