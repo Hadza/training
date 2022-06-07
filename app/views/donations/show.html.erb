@@ -3,7 +3,7 @@
 <h1><%= "#{@donation.name} - #{@donation.category}" %></h1>
 <ul>
   <li>
-    <%= "Category: #{ @donation.category }" %>
+    <%= "Category: #{ @donation.category.name }" %>
   </li>
   <li>
     <%= "Created at: #{@donation.created_at.strftime("%d/%m/%Y")}"  %>
@@ -21,3 +21,5 @@
     <%= "Donee: #{ @donation.donee.email }" %>
   </li>
 </ul>
+
+

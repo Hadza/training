@@ -1,0 +1,14 @@
+<% provide(:title, "New donation: ") %>
+<%= link_to 'Back', donations_path %>
+<h2>New Donation</h2>
+<%= form_with model: @donation , data: { turbo: false } do |form| %>
+  <%= form.label :name, "Item" %>
+  <%= form.text_field :name, :maxlength => 120 %>
+  <%= form.label :description, "Description" %>
+  <%= form.text_area :description %>
+  <%= form.label :name, "Category" %>
+  <%= form.collection_select :category_id, Category.all, :id, :name %>
+  <%= form.hidden_field :donor_id, value: current_user.id %>
+  <%= form.submit %>
+<% end %>
+
