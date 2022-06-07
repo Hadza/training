@@ -32,6 +32,7 @@ group :development do
   gem 'bundler-audit', require: false
   gem 'erb_lint', require: false
   gem 'letter_opener'
+
   gem 'rubocop', require: false
   gem 'rubocop-minitest', require: false
   gem 'rubocop-performance', require: false
@@ -42,6 +43,8 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 6.0.0.rc1'
 end
 
 group :test do
