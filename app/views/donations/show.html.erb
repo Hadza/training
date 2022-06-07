@@ -1,0 +1,23 @@
+<% provide(:title, @donation.name) %>
+<%= link_to 'Back', donations_path %>
+<h1><%= "#{@donation.name} - #{@donation.category}" %></h1>
+<ul>
+  <li>
+    <%= "Category: #{ @donation.category }" %>
+  </li>
+  <li>
+    <%= "Created at: #{@donation.created_at.strftime("%d/%m/%Y")}"  %>
+  </li>
+  <li>
+    <%= "Last modified: #{@donation.updated_at.strftime("%d/%m/%Y")}"  %>
+  </li>
+  <li>
+    <%=  "Status: #{ @donation.claimed ? "Claimed" : "Unclaimed" }" %>
+  </li>
+  <li>
+    <%= "Donor: #{ @donation.donor.email }" %>
+  </li>
+  <li>
+    <%= "Donee: #{ @donation.donee.email }" %>
+  </li>
+</ul>

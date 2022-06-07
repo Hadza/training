@@ -1,0 +1,29 @@
+<%= link_to 'Back', '/' %>
+
+<% if @donations.any? %>
+  <% @donations.each do |donation| %>
+    <li>
+      <%= link_to_if(user_signed_in?, "#{donation.name}", donation_path(donation.id)) %>
+    </li>
+    <ul>
+      <li>
+        <%= donation.name %>
+      </li>
+      <li>
+        <%= donation.category %>
+      </li>
+      <li>
+        <%= donation.created_at.strftime("%d/%m/%Y") %>
+      </li>
+      <li>
+        <%= donation.claimed ? "Claimed" : "Unclaimed" %>
+      </li>
+      <li>
+        <%= donation.donor.email %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No donations found</p>
+  <%= button_to "Create donation", new_donation_path  %>
+<% end %>
