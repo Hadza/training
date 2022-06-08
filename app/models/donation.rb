@@ -26,8 +26,7 @@ class Donation < ApplicationRecord
   belongs_to :donee, class_name: 'User', optional: true
   belongs_to :category
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 120 }
   validates :category, presence: true
   validates :donor, presence: true
-
 end
