@@ -19,16 +19,14 @@ class DonationsController < ApplicationController
   end
 
   def create
-    puts "Creating donation #{donation_params}"
-
     @donation = Donation.new(donation_params)
     if @donation.save
       puts "Created donation #{@donation.name} with created_at #{@donation.created_at}"
-      flash.keep[:notice] = "Donation #{@donation.name} created"
+      flash[:notice] = "Donation #{@donation.name} created"
       redirect_to action: 'index'
 
     else
-      flash[:notice] = @donation.errors.full_messages.join(', ')
+      flash.now[:notice] = @donation.errors.full_messages.join(', ')
       render 'new'
     end
   end
