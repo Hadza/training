@@ -1,6 +1,9 @@
 <% provide(:title, @donation.name) %>
 <%= link_to 'Back', donations_path %>
-<h1><%= "#{@donation.name} - #{@donation.category}" %></h1>
+<h1 class="underline">
+  Hello world!
+</h1>
+<h1 class="prose prose-neutral"><%= "#{@donation.name} - #{@donation.category}" %></h1>
 <ul>
   <li>
     <%= "Category: #{ @donation.category.name }" %>
@@ -18,7 +21,7 @@
     <%= "Donor: #{ @donation.donor.email }" %>
   </li>
   <li>
-    <%= "Donee: #{ @donation.donee.email }" %>
+    <%= "Donee: #{ @donation.donee ? @donation.donee.email : 'No one has claimed yet.' }" %>
   </li>
 </ul>
 
