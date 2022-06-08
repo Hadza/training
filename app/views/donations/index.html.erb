@@ -1,5 +1,7 @@
 <%= link_to 'Back', '/' %>
 <br/>
+<%= render(ExampleComponent.new(title: "Component test")) do end %>
+<br/>
 <%= link_to "Create donation", new_donation_path if user_signed_in?  %>
 <% if @donations.any? %>
   <% @donations.each do |donation| %>

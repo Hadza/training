@@ -18,6 +18,8 @@ gem 'rails', '~> 7.0.3'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+gem "view_component"
+
 
 
 group :production do
