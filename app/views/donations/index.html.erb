@@ -1,5 +1,6 @@
 <%= link_to 'Back', '/' %>
-
+<br/>
+<%= link_to "Create donation", new_donation_path if user_signed_in?  %>
 <% if @donations.any? %>
   <% @donations.each do |donation| %>
     <li>
@@ -10,7 +11,7 @@
         <%= donation.name %>
       </li>
       <li>
-        <%= donation.category %>
+        <%= donation.category.name %>
       </li>
       <li>
         <%= donation.created_at.strftime("%d/%m/%Y") %>
@@ -25,5 +26,6 @@
   <% end %>
 <% else %>
   <p>No donations found</p>
-  <%= button_to "Create donation", new_donation_path  %>
+  <%= link_to "Create donation", new_donation_path  %>
 <% end %>
+

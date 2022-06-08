@@ -8,6 +8,10 @@
 
 categories = %w[Clothing Food Electronics Other]
 
+categories.each do |category|
+  Category.create(name: category)
+  puts "Created category: #{category} - #{Category.last.id}"
+end
 
 30.times do |i|
   user = User.create(email: "user#{i}@example.com", password: 'password')
@@ -18,12 +22,15 @@ end
 User.all.each do |user|
   rand(5..15).times do |j|
     claimed = rand(0..1) == 1
+    category = Category.all.sample
+    puts "Creating donation for user #{user.email} with claimed #{claimed} and category #{category}"
+
     donation = Donation.create(
       name: 'Donation',
       description: "This is a donation #{j}",
-      category: categories.sample,
       donor_id: user.id,
-      claimed:
+      claimed:,
+      category:
     )
 
     donation.update(donee_id: User.where.not(id: user.id).sample.id) if claimed
