@@ -9,6 +9,6 @@
     <%= form.text_area :description %>
     <%= form.label :name, "Category", class: "my-2" %>
     <%= form.collection_select :category_id, Category.all, :id, :name, class: "my-2" %>
-    <%= form.submit :class => "btn-primary my-2" %>
+    <%= form.submit :class => "my-2" %>
   <% end %>
 </div>

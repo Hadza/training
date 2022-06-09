@@ -7,6 +7,12 @@
 
 
 @layer components {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   h1 {
     @apply text-3xl font-bold;
   }
@@ -27,6 +33,10 @@
     @apply text-base;
   }
 
+  label {
+    @apply text-sm font-medium leading-5;
+  }
+
   a {
     @apply text-blue-500;
   }
@@ -35,13 +45,67 @@
     @apply text-blue-700;
   }
 
-  .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-700 disabled:bg-primary-300 text-white font-bold py-3.5 px-5 rounded-md;
+   .btn-secondary {
+    @apply bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md;
   }
 
-  .btn-secondary {
-    @apply bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded;
+  input[type="text"] {
+    @apply invalid:border-red-300 focus:border-primary-300 border-2 border-gray-300  rounded-md p-2;
+    width: 400px;
   }
+
+  input[type="email"] {
+    @apply invalid:border-red-300 focus:border-primary-300 border-2 border-gray-300  rounded-md p-2;
+    width: 400px;
+  }
+
+  input[type="password"] {
+    @apply invalid:border-red-300 focus:border-primary-300 border-2 border-gray-300  rounded-md p-2;
+    width: 400px;
+  }
+
+  input[type="checkbox"] {
+    @apply checked:bg-blue-500 border-2 border-gray-300 rounded-md p-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none;
+  }
+
+  input[type="radio"] {
+    @apply checked:bg-blue-500 border-2 border-gray-300 rounded-md p-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none;
+  }
+
+  input[type="submit"] {
+    @apply bg-primary-500 hover:bg-primary-700 disabled:bg-primary-300 text-white text-sm font-bold py-4 px-10 gap-2.5 rounded-md;
+  }
+
+  textarea {
+    @apply focus:border-primary-300 border-2 border-gray-300 rounded-md p-2;
+  }
+
+  :root {
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  select {
+    @apply focus:border-primary-300 border-2 border-gray-300 rounded-md p-2;
+  }
+
+  option {
+    @apply text-gray-500 hover:bg-primary-300 rounded-md p-2;
+  }
+
+  .standard-select {
+    @apply text-gray-700 hover:text-gray-900 focus:text-gray-900 focus:bg-gray-100;
+  }
+
+  .card {
+    @apply bg-white shadow-sm overflow-hidden;
+  }
+
 }
 
 
