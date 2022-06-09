@@ -99,7 +99,7 @@
   }
 
   .card {
-    @apply bg-white shadow-sm overflow-hidden;
+    @apply bg-white shadow overflow-hidden;
   }
 
 }
