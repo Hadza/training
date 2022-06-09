@@ -38,11 +38,7 @@
   }
 
   a {
-    @apply text-blue-500;
-  }
-
-  a:hover {
-    @apply text-blue-700;
+    @apply text-primary-500 font-bold hover:text-primary-600;
   }
 
    .btn-secondary {
