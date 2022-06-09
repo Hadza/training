@@ -58,7 +58,9 @@
   input[type="text"],
   input[type="password"],
   input[type="email"]{
-    @apply invalid:border-red-300 focus:border-primary-300 border-2 border-gray-300  rounded-md p-2;
+    @apply invalid:border-red-300 focus:border-primary-300 border-2 border-gray-300  rounded-md p-2 w-full;
+    min-width: 327px;
+    max-width: 400px;
   }
 
   input[type="checkbox"],
