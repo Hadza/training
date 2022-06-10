@@ -4,9 +4,19 @@
 
 /* add tailwindcss build to css*/
 
-
-
 @layer components {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /*
+  *
+  * Typography and text styles
+  *
+  */
+
   h1 {
     @apply text-3xl font-bold;
   }
@@ -27,22 +37,81 @@
     @apply text-base;
   }
 
+  label {
+    @apply text-sm font-medium leading-5;
+  }
+
   a {
-    @apply text-blue-500;
+    @apply text-primary-500 font-bold hover:text-primary-600;
   }
 
-  a:hover {
-    @apply text-blue-700;
+  /*
+  *
+  * Inputs
+  *
+  */
+
+  .btn-secondary {
+    @apply bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md;
   }
 
-/*  Primary button*/
+  input[type="text"],
+  input[type="password"],
+  input[type="email"]{
+    @apply invalid:border-red-300 focus:border-primary-300 border-2 border-gray-300  rounded-md p-2 w-full;
+    min-width: 327px;
+    max-width: 400px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @apply checked:bg-blue-500 border-2 border-gray-300 rounded-md p-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none;
+  }
+
   input[type="submit"] {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+    @apply bg-primary-500 hover:bg-primary-700 disabled:bg-primary-300 text-white text-sm font-bold py-4 px-10 gap-2.5 rounded-md;
   }
 
-  input[type="submit"]:disabled {
-    @apply bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded;
+  textarea {
+    @apply focus:border-primary-300 border-2 border-gray-300 rounded-md p-2;
   }
+
+  :root {
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  select {
+    @apply focus:border-primary-300 border-2 border-gray-300 rounded-md p-2;
+  }
+
+  option {
+    @apply text-gray-500 hover:bg-primary-300 rounded-md p-2;
+  }
+
+  @media (min-width: 640px) {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 400px;
+    }
+  }
+
+  /*
+  *
+  * Components
+  *
+  */
+
+  .card {
+    @apply bg-white shadow-sm overflow-hidden;
+  }
+
 }
 
 

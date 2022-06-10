@@ -2,11 +2,9 @@
 <%# to include things like header, footer, and alerts that are common  %>
 <%# to most (but not all) views.                                       %>
 
-<main class="container mx-auto mt-28 px-5">
+<main class="relative flex flex-col sm:mx-auto sm:mt-28 sm:px-5 items-center">
   <%= render("shared/flash") %>
   <%= yield %>
-<!--  <p class="alert alert-success"><%#= notice %></p>-->
-<!--  <p class="alert alert-danger"><%#= alert %></p>-->
 </main>
 
 <% parent_layout "base" %>
