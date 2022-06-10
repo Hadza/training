@@ -27,7 +27,7 @@ class DonationsController < ApplicationController
       redirect_to action: 'index'
     else
       flash.now[:notice] = @donation.errors.full_messages.join(', ')
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
