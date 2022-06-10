@@ -1,14 +1,14 @@
 <% provide(:title, "New donation: ") %>
-<div class="">
+<div>
   <%= link_to 'Back', donations_path, class: 'underline' %>
   <h2 class="my-4">New Donation</h2>
   <%= form_with model: @donation , data: { turbo: false }, class: 'flex flex-col' do |form| %>
     <%= form.label :name, "Item", class: "my-2" %>
-    <%= form.text_field :name, maxlength: 120, :size => "auto", :require => true %>
+    <%= form.text_field :name, maxlength: 120, size: "auto", require: true %>
     <%= form.label :description, "Description", class: "my-2" %>
     <%= form.text_area :description %>
     <%= form.label :name, "Category", class: "my-2" %>
     <%= form.collection_select :category_id, Category.all, :id, :name, class: "my-2" %>
-    <%= form.submit :class => "my-2" %>
+    <%= form.submit class: "my-2" %>
   <% end %>
 </div>
