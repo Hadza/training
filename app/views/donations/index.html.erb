@@ -1,33 +1,33 @@
-<%= link_to 'Back', '/' %>
-<br/>
-<%= render(ExampleComponent.new(title: "Component test")) do end %>
-<br/>
-<%= link_to "Create donation", new_donation_path if user_signed_in?  %>
-<% if @donations.any? %>
-  <% @donations.each do |donation| %>
-    <li>
-      <%= link_to_if(user_signed_in?, "#{donation.name}", donation_path(donation.id)) %>
-    </li>
-    <ul>
-      <li>
-        <%= donation.name %>
-      </li>
-      <li>
-        <%= donation.category.name %>
-      </li>
-      <li>
-        <%= donation.created_at.strftime("%d/%m/%Y") %>
-      </li>
-      <li>
-        <%= donation.claimed ? "Claimed" : "Unclaimed" %>
-      </li>
-      <li>
-        <%= donation.donor.email %>
-      </li>
-    </ul>
+<%#= link_to 'Back', '/' %>
+<div class="flex flex-col sm:card py-16 px-6 w-full sm:w-auto ">
+  <h2 class="text-gray-3 text-left mb-10">
+    Donation List
+  </h2>
+  <%#= link_to "Create donation", new_donation_path if user_signed_in?  %>
+  <% if @donations.any? %>
+    <% @donations.each do |donation| %>
+      <div class="card shadow-none border-solid border-2 border-gray-6 rounded mb-6 p-6">
+        <div class="flex justify-between mb-3">
+          <div class="text-xs text-gray-4">
+            <%= "Posted: #{donation.created_at.strftime("%d-%m-%Y")}"%>
+          </div>
+          <div class="text-xs leading-4 font-medium text-gray-4 rounded py-1 px-2.5 <%= class_names(donation.claimed ? 'bg-tertiary-300 text-tertiary-500 ':'bg-secondary-300 text-secondary-500 ') %>">
+            <%= donation.claimed ? "Claimed" : "Available" %>
+          </div>
+        </div>
+        <h4 class="text-gray-3 mb-3">
+          <%= donation.name %>
+        </h4>
+        <div class="text-gray-4 text-xs mb-2">
+          <%= "Category: #{donation.category.name}"%>
+        </div>
+        <div class="text-gray-4 text-xs">
+          <%= "Posted by: #{donation.donor.email}"%>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No donations found</p>
+    <%= link_to "Create donation", new_donation_path  %>
   <% end %>
-<% else %>
-  <p>No donations found</p>
-  <%= link_to "Create donation", new_donation_path  %>
-<% end %>
-
+</div>
