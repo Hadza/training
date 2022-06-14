@@ -5,7 +5,7 @@
   </h2>
   <% if @donations.any? %>
     <% @donations.each do |donation| %>
-      <%= link_to donation, class: "card shadow-none border-solid border border-gray-6 rounded p-6 mb-6 #{'pointer-events-none' unless user_signed_in?}" do %>
+      <%= link_to donation, class: "card shadow-none border-solid border border-gray-6 rounded p-6 mb-6" do %>
         <div class="flex justify-between mb-3">
           <div class="text-xs text-gray-4">
             <%= "Posted: #{donation.created_at.strftime("%d-%m-%Y")}" %>
@@ -34,7 +34,7 @@
       </div>
       <span class="text-gray-3 text-base font-bold text-center mb-2">Looks like there's nothing here!</span>
       <p class="text-gray-10 text-sm mb-16">No donations have been listed yet</p>
-      <%= link_to "CREATE A DONATION ITEM", new_donation_path, class: 'btn-primary' %>
+      <%= link_to "CREATE A DONATION ITEM", new_donation_path, class: 'btn-primary' if user_signed_in? %>
     </div>
   <% end %>
 </div>
