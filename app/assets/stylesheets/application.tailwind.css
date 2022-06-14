@@ -50,6 +50,9 @@
   * Inputs
   *
   */
+  .btn-primary, button {
+    @apply bg-primary-500 text-white text-sm font-bold py-4 px-10 gap-2.5 rounded-md hover:text-white hover:bg-primary-700 disabled:bg-primary-300;
+  }
 
   .btn-secondary {
     @apply bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md;

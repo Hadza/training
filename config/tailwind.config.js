@@ -13,6 +13,12 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
+      minWidth: {
+        'card-min': '375px',
+      },
+      maxWidth: {
+        'card-max': '400px',
+      },
       colors: {
         'primary': {
           '300': '#E8E6F6',
@@ -37,6 +43,7 @@ module.exports = {
           '7': '#E5E9F2',
           '8': '#EFF2F7',
           '9': '#F9FAFC',
+          '10': '#6B7280'
         },
         'light-gray': '#F9FAFC',
       }
