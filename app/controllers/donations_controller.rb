@@ -1,6 +1,6 @@
 # Controller for the donations page
 class DonationsController < ApplicationController
-
+  before_action :authenticate_user!, only: %i[new create show]
   def index
     @donations = Donation.order(:created_at).reverse_order
   end

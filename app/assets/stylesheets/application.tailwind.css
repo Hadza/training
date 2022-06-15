@@ -8,7 +8,7 @@
   *,
   *::before,
   *::after {
-    box-sizing: border-box;
+    box-sizing: content-box;
   }
 
   /*
@@ -42,7 +42,7 @@
   }
 
   a {
-    @apply text-primary-500 font-bold hover:text-primary-600;
+    @apply text-primary-500 hover:text-primary-600;
   }
 
   /*
@@ -50,6 +50,9 @@
   * Inputs
   *
   */
+  .btn-primary, button {
+    @apply bg-primary-500 text-white text-sm font-bold py-4 px-10 gap-2.5 rounded-md hover:text-white hover:bg-primary-700 disabled:bg-primary-300;
+  }
 
   .btn-secondary {
     @apply bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md;
@@ -58,8 +61,8 @@
   input[type="text"],
   input[type="password"],
   input[type="email"]{
-    @apply invalid:border-red-300 focus:border-primary-300 border-2 border-gray-300  rounded-md p-2 w-full;
-    min-width: 327px;
+    @apply invalid:border-red-300 focus:border-primary-300 border-2 border-gray-300  rounded-md w-full box-border;
+    min-width: 325px;
     max-width: 400px;
   }
 
