@@ -59,3 +59,7 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.0"
+
+gem "view_component-contrib", "~> 0.1.1"
+
+gem "dry-initializer", "~> 3.1"

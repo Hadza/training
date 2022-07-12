@@ -3,8 +3,8 @@
     <div class="text-xs text-gray-4">
       <%= "Posted: #{creation_date}" %>
     </div>
-    <div class="text-xs leading-4 font-medium text-gray-4 rounded py-1 px-2.5 <%= class_names(@donation.claimed ? 'bg-tertiary-300 text-tertiary-500 ' : 'bg-secondary-300 text-secondary-500 ') %>">
-      <%= @donation.claimed ? "Claimed" : "Available" %>
+    <div class="<%= claimed_status_class %>">
+      <%= claimed_status %>
     </div>
   </div>
   <h4 class="text-gray-3 mb-3">

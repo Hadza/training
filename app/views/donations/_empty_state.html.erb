@@ -1,0 +1,10 @@
+<div class="flex flex-col items-center pt-8">
+  <div class="flex items-center justify-center w-12 h-12 rounded-3xl bg-tertiary-300 text-center mb-3">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.8284 14.1716C11.2663 12.6095 8.73361 12.6095 7.17151 14.1716M13 8H12.99M7 8H6.99M1 10C1 14.9706 5.02944 19 10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10Z" stroke="#EF9DE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <span class="text-gray-3 text-base font-bold text-center mb-2">Looks like there's nothing here!</span>
+  <p class="text-gray-10 text-sm mb-16">No donations have been listed yet</p>
+  <%= link_to "CREATE A DONATION ITEM", new_donation_path, class: 'btn-primary' if user_signed_in? %>
+</div>

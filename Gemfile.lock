@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/king601/devise-bootstrapped.git
+  revision: baa908988c08302e13c4536a4efee0052172ac94
+  specs:
+    devise-bootstrapped (0.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,11 +112,19 @@ GEM
     concurrent-ruby (1.1.10)
     connection_pool (2.2.5)
     crass (1.0.6)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    diff-lcs (1.5.0)
     digest (3.1.0)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    dry-initializer (3.1.1)
     erb_lint (0.1.1)
       activesupport
       better_html (~> 1.0.7)
@@ -120,6 +134,11 @@ GEM
       rubocop
       smart_properties
     erubi (1.10.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     html_tokenizer (0.0.7)
@@ -165,6 +184,7 @@ GEM
     nokogiri (1.13.6)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
@@ -216,7 +236,27 @@ GEM
     rake (13.0.6)
     redis (4.6.0)
     regexp_parser (2.5.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.5)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-rails (6.0.0.rc1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.11.0)
     rubocop (1.30.0)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
@@ -237,6 +277,7 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
+    ruby-next-core (0.15.1)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.2.1)
@@ -262,6 +303,8 @@ GEM
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.3)
+    tailwindcss-rails (2.0.8-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.3.0)
     turbo-rails (1.1.1)
@@ -271,6 +314,14 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
+    view_component (2.57.0)
+      activesupport (>= 5.0.0, < 8.0)
+      method_source (~> 1.0)
+    view_component-contrib (0.1.1)
+      ruby-next-core (>= 0.12.0)
+      view_component
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -301,8 +352,12 @@ DEPENDENCIES
   bundler-audit
   byebug
   capybara
+  devise
+  devise-bootstrapped!
   dotenv-rails
+  dry-initializer (~> 3.1)
   erb_lint
+  factory_bot_rails
   importmap-rails
   letter_opener
   minitest-ci
@@ -312,6 +367,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-canonical-host
   rails (~> 7.0.3)
+  rspec-rails (~> 6.0.0.rc1)
   rubocop
   rubocop-minitest
   rubocop-performance
@@ -322,7 +378,10 @@ DEPENDENCIES
   sidekiq
   sprockets-rails
   stimulus-rails
+  tailwindcss-rails (~> 2.0)
   turbo-rails
+  view_component
+  view_component-contrib (~> 0.1.1)
   web-console
   webdrivers
 
