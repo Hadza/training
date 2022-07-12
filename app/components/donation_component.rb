@@ -5,7 +5,8 @@ class DonationComponent < ViewComponent::Base
   end
 
   private
+
   def creation_date
-    @donation.created_at.strftime("%d-%m-%Y")
+    @donation.created_at.strftime('%d-%m-%Y')
   end
 end

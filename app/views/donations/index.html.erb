@@ -4,9 +4,7 @@
     Donation List
   </h2>
   <% if @donations.any? %>
-    <% @donations.each do |donation| %>
-      <%= render(Donation::Component.new(donation: donation)) %>
-    <% end %>
+    <%= render(DonationComponent.with_collection(@donations)) %>
   <% else %>
     <%= render 'donations/empty_state' %>
   <% end %>
